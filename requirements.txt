@@ -1,0 +1,4 @@
+requests>=2.25.0
+pyotp>=2.6.0
+matplotlib>=3.5.0
+japanize-matplotlib>=1.1.0
