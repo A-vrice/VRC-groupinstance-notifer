@@ -42,10 +42,15 @@ def parse_log_file(log_path):
             for line in f:
                 match = pattern.search(line)
                 if match:
-                    timestamp = datetime.strptime(match.group(1), '%Y-%m-%d %H:%M:%S')
-                    count = int(match.group(2))
-                    timestamps.append(timestamp)
-                    user_counts.append(count)
+                    try:
+                        timestamp = datetime.strptime(match.group(1), '%Y-%m-%d %H:%M:%S')
+                        count = int(match.group(2))
+                        timestamps.append(timestamp)
+                        user_counts.append(count)
+                    except (ValueError, OverflowError) as e:
+                        # Skip lines with invalid timestamps or counts
+                        logging.debug(f"スキップされた無効な行: {line.strip()} - エラー: {e}")
+                        continue
         return timestamps, user_counts
     except FileNotFoundError:
         logging.error(f"エラー: {log_path} が見つかりません")

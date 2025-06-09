@@ -1,0 +1,14 @@
+{
+    "GROUP_ID": "your_group_id",
+    "TARGET_WORLD_ID": "your_world_id",
+    "DISCORD_WEBHOOK_URLS": {
+        "LOG": "https://discord.com/api/webhooks/your_log_webhook",
+        "INSTANCE": "https://discord.com/api/webhooks/your_instance_webhook",
+        "STATS": "https://discord.com/api/webhooks/your_stats_webhook"
+    },
+    "USERNAME": "your_vrchat_username",
+    "PASSWORD": "your_vrchat_password",
+    "TOTP_SECRET": "your_2fa_secret",
+    "MINIMUM_USERS": "3",
+    "USER_AGENT": "your_user_agent"
+}
